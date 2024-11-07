@@ -25,3 +25,11 @@ console.log(`£${pounds}.${pence}`);
 
 // To begin, we can start with
 // 1. const penceString = "399p": initialises a string variable with the value "399p"
+//const penceStringWithoutTrailingP = penceString.substring(0,penceString.length - 1); that is the meaning of remove p
+// const paddedPenceNumberString = penceStringWithoutTrailingP.padStart(3, "0"); this is making three number if not add zero
+// const pounds = paddedPenceNumberString.substring(  0,  paddedPenceNumberString.length - 2) try to get pound from start number to length -2
+// const pence = paddedPenceNumberString
+//   .substring(paddedPenceNumberString.length - 2)
+//   .padEnd(2, "0"); this mean last 2 digit and if no change it to zero to get pence
+
+// console.log(`£${pounds}.${pence}`); template literal to print out
