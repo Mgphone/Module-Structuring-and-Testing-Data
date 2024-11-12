@@ -2,11 +2,38 @@
 // Your task is to write tests for as many different groups of input data or edge cases as you can, and fix any bugs you find.
 
 function formatAs12HourClock(time) {
-  const hours = Number(time.slice(0, 2));
+  if (!time || time.length !== 5) {
+    return "Invalid Number";
+  }
+  const splitTime = time.split(":");
+
+  if (splitTime.length !== 2) {
+    return "Invalid format time";
+  }
+
+  const hours = Number(splitTime[0]);
+  const minutes = +splitTime[1];
+  if (
+    isNaN(hours) ||
+    isNaN(minutes) ||
+    minutes < 0 ||
+    minutes > 59 ||
+    hours < 0 ||
+    hours > 23
+  ) {
+    return "Invalid Time value";
+  }
+
   if (hours > 12) {
     return `${hours - 12}:00 pm`;
   }
-  return `${time} am`;
+  if (hours == 0) {
+    return `12:${minutes} am`;
+  }
+  if (hours == 12) {
+    return `12:${minutes} pm`;
+  }
+  return `${hours}:${minutes} am`;
 }
 
 const currentOutput = formatAs12HourClock("08:00");
