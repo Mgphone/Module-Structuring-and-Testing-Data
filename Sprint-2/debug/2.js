@@ -1,8 +1,9 @@
 // Predict and explain first...
-
+// Predict error function is calling the number of 103 anc slice to 103 and the result can be 3
+//if i add parameter to getLastDigit it will work
 const num = 103;
 
-function getLastDigit() {
+function getLastDigit(num) {
   return num.toString().slice(-1);
 }
 
