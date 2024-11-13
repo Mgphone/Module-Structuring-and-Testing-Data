@@ -13,3 +13,9 @@
 
 // You will need to come up with an appropriate name for the function
 // Use the string documentation to help you find a solution
+function changeUpperSnakeCase(inputString) {
+  let changeSpaceToUnderScore = inputString.replaceAll(" ", "_");
+  let changeUpperCase = changeSpaceToUnderScore.toUpperCase();
+  return changeUpperCase;
+}
+console.log(changeUpperSnakeCase("lord of the rings"));
