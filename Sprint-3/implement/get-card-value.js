@@ -29,3 +29,19 @@
 // Given a card with an invalid rank (neither a number nor a recognized face card),
 // When the function is called with such a card,
 // Then it should throw an error indicating "Invalid card rank."
+function getCardValue(checkingCard, emoji) {
+  //   const splitCard = checkingCard.split("");
+  //   return splitCard;
+  const emojiArray = ["❤️", "♠️", "♦️", "♣️"];
+  const isEmojiValid = emojiArray.includes(emoji);
+  const valueOfCard =
+    checkingCard == "A"
+      ? 11
+      : checkingCard == "K" || checkingCard == "Q" || checkingCard == "J"
+      ? 10
+      : !isNaN(checkingCard) && checkingCard >= 2 && checkingCard <= 10
+      ? Number(checkingCard)
+      : false;
+  return isEmojiValid && valueOfCard ? valueOfCard : "Invalid card rank";
+}
+console.log(getCardValue("K", "♠️"));
