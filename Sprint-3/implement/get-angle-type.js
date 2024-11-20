@@ -38,4 +38,5 @@ function getAngleType(degrees) {
     return "Reflex Angle";
   } else return "Your angle should not be less than 0 or greater than 360";
 }
-console.log(getAngleType(181));
+console.log(getAngleType(0));
+module.exports = getAngleType;

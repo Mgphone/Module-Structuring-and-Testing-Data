@@ -1,0 +1,10 @@
+{
+  "name": "sprint-3-project",
+  "description": "Week 3 Sprint project",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

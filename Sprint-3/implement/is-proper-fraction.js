@@ -38,4 +38,5 @@ const isProperFraction = (numerator, denominator) => {
   }
   return Math.abs(numerator) < Math.abs(denominator);
 };
-console.log(isProperFraction(2, 3));
+// console.log(isProperFraction(2, 1));
+module.exports = isProperFraction;

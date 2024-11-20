@@ -44,4 +44,6 @@ function getCardValue(checkingCard, emoji) {
       : false;
   return isEmojiValid && valueOfCard ? valueOfCard : "Invalid card rank";
 }
-console.log(getCardValue("K", "♠️"));
+
+// console.log(getCardValue("K", "♠️"));
+module.exports = getCardValue;

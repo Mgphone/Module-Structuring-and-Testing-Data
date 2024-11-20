@@ -46,22 +46,23 @@ const rotateCharacter = (alphabet, number) => {
   const smallLetter = "abcdefghijklmnopqrstuvwxyz";
   const capitalSplit = capitalLetter.split("");
   const smallSplit = smallLetter.split("");
-  const isAplhabetCapital = capitalSplit.includes(alphabet);
-  const isAplhabetSmall = smallSplit.includes(alphabet);
+  const isAlphabetCapital = capitalSplit.includes(alphabet);
+  const isAlphabetSmall = smallSplit.includes(alphabet);
   if (typeof number !== "number") {
     return "Check Your Number";
   }
   // return typeof number;
 
-  if (isAplhabetCapital) {
-    const caplitalLetterIndex =
+  if (isAlphabetCapital) {
+    const capitalLetterIndex =
       (capitalSplit.indexOf(alphabet) + number) % capitalLetter.length;
-    return capitalLetter[caplitalLetterIndex];
-  } else if (isAplhabetSmall) {
+    return capitalLetter[capitalLetterIndex];
+  } else if (isAlphabetSmall) {
     const smallLetterIndex =
       (capitalSplit.indexOf(alphabet) + number) % smallLetter.length;
     return smallLetter[smallLetterIndex];
   }
   return alphabet;
 };
-console.log(rotateCharacter("z", 2));
+console.log(rotateCharacter("2", 2));
+module.exports = rotateCharacter;
