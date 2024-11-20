@@ -15,3 +15,41 @@
 // And a character char that does not exist within the case-sensitive str,
 // When the function is called with these inputs,
 // Then it should return 0, indicating that no occurrences of the char were found in the case-sensitive str.
+const countChar = (str, char) => {
+  let numberToWord = [
+    "0",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+  ];
+  let splitValue = str.split("");
+  let result = 0;
+  for (let i = 0; i < splitValue.length; i++) {
+    if (splitValue[i] == char) {
+      result += 1;
+    }
+  }
+  return result == 0
+    ? "no occurrences of the char were found in the case-sensitive str"
+    : `"${char}" appears ${numberToWord[result]} ${
+        result > 1 ? "times" : "time"
+      } in "${str}"`;
+};
+console.log(countChar("hello s", "a"));
+
+test("not found char in str", () => {
+  expect(countChar("You can not find me", "z")).toBe(
+    "no occurrences of the char were found in the case-sensitive str"
+  );
+});
+
+test("find/finds char in str", () => {
+  expect(countChar("aaaaa", "a")).toBe(`"a" appears five times in "aaaaa"`);
+});
