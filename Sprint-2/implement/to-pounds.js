@@ -21,3 +21,6 @@ function changeToPound(input) {
   return `£${pounds}.${pence}`;
 }
 console.log(changeToPound("399p"));
+test("abcdef", () => {
+  expect(3).toBe("Only Positive Integer");
+});

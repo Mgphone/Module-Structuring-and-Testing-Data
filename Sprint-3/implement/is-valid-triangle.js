@@ -36,6 +36,6 @@
 function isValidTriangle(a, b, c) {
   return a + b > c && b + c > a && a + c > b;
 }
-console.log(isValidTriangle(3, 3, 3));
+console.log(isValidTriangle(0, 2, 1));
 
 module.exports = isValidTriangle;

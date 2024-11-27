@@ -48,9 +48,9 @@ const rotateCharacter = (alphabet, number) => {
   const smallSplit = smallLetter.split("");
   const isAlphabetCapital = capitalSplit.includes(alphabet);
   const isAlphabetSmall = smallSplit.includes(alphabet);
-  if (typeof number !== "number") {
-    return "Check Your Number";
-  }
+  // if (typeof number !== "number") {
+  //   return "Check Your Number";
+  // }
   // return typeof number;
 
   if (isAlphabetCapital) {
@@ -59,10 +59,10 @@ const rotateCharacter = (alphabet, number) => {
     return capitalLetter[capitalLetterIndex];
   } else if (isAlphabetSmall) {
     const smallLetterIndex =
-      (capitalSplit.indexOf(alphabet) + number) % smallLetter.length;
+      (smallSplit.indexOf(alphabet) + number) % smallLetter.length;
     return smallLetter[smallLetterIndex];
   }
   return alphabet;
 };
-console.log(rotateCharacter("2", 2));
+console.log(rotateCharacter("4", 2));
 module.exports = rotateCharacter;
