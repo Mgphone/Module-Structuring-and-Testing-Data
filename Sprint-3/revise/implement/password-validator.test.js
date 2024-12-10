@@ -52,14 +52,14 @@ const checkPasswordValidation = (newPassword) => {
   //   return isCharContainOneSpecialLetter;
   const previousPassword = ["mg-Phone", "Phone."]; //this might coming from somewhere from database
   //   return previousPassword.includes(newPassword);
-  const isPasswordMatchOld = previousPassword.includes(newPassword);
+  const isPasswordMatchOld = !previousPassword.includes(newPassword);
   //   return !isPasswordMatchOld;
   return isCharAtLeaseFive &&
     isCharContainOneCapital &&
     isCharContainOneLowerLetter &&
     isCharContainOneNumber &&
     isCharContainOneSpecialLetter &&
-    !isPasswordMatchOld
+    isPasswordMatchOld
     ? "Password Valid"
     : "Password Invalid";
 };
@@ -70,4 +70,7 @@ test("Checking Invalid", () => {
 
 test("Checking Valid", () => {
   expect(checkPasswordValidation("ancd0A.")).toBe("Password Valid");
+});
+test("Checking inValid A$.$$$A", () => {
+  expect(checkPasswordValidation("A$.$$$A.")).toBe("Password Invalid");
 });

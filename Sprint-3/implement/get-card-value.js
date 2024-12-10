@@ -51,6 +51,9 @@ function getCardValue(card) {
 
   const rank = card.slice(0, -2);
   const suit = card.slice(-2);
+  // console.log("this is rank" + rank);
+  // console.log("this is suit" + suit);
+
   if (!validSuit.includes(suit)) {
     throw new Error("Invalid card suit");
   }
@@ -68,5 +71,6 @@ function getCardValue(card) {
   return valueOfCard;
 }
 // console.log(getCardValue("LL"));
+// console.log(getCardValue("002♦️"));
 
 module.exports = getCardValue;
